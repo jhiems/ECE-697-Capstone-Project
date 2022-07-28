@@ -3,3 +3,4 @@ wandb_api_key.txt
 *.out
 *.err
 gittoken.txt
+*.tar.gz

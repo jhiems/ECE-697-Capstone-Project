@@ -4,6 +4,14 @@ import shutil
 import argparse
 from sklearn.model_selection import train_test_split
 
+###########################################
+# Program to handle partitioning and reorganizing data
+###########################################
+
+###########################################
+# Functions
+###########################################
+
 def gen_roots(_file):
     delim_ind = _file.rfind("_")
     prefix = _file[0:delim_ind]
@@ -20,6 +28,9 @@ def move(_file_list,_file_parents,_root_data_dir,_target_dir,_current_path):
             shutil.move(os.path.join(_current_path,_file), _data_dir)
         
 
+###########################################
+# Main
+###########################################
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="kspace to image space conversion for single and multi coil MRI scans")
@@ -83,9 +94,13 @@ if __name__ == "__main__":
     with Pool(6) as p:
        parent_files = list(set(p.map(gen_roots,file_names)))
 
+
+    #Set up train/test/val split
     train, tes_tval = train_test_split(parent_files, test_size=0.40, shuffle=True,random_state=1)
     test, val = train_test_split(tes_tval, test_size=0.5, shuffle=True, random_state=1)
     
+
+    #Start moving the files
     move(file_names,train,target,train_dir,file_path)
     print("Training files moved.\n")
     move(file_names,test,target,test_dir,file_path)

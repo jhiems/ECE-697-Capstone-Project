@@ -60,8 +60,16 @@ def multi_coil_k2im(_file,_delete): #for conversion of multi coil images
         delete(_file)
 
 
+
+
+
+###########################################
+#Main
+###########################################
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="kspace to image space conversion for single and multi coil MRI scans")
+   
     ###########################################
     #Parser/CLI arguments
     ###########################################
@@ -101,11 +109,21 @@ if __name__ == "__main__":
         print("The -m and -s options cannot be combined. Select either -s or -m.\n")
         exit()
 
+
+    ###########################################
+    #File Handling
+    ###########################################
+
     file_path = args.file_path[0]
     file_names = os.listdir(file_path)    
     file_names = list(filter(lambda f: f[-2:]=="h5", file_names))
     file_list = [os.path.join(file_path,i) for i in file_names]
 
+
+
+    ###########################################
+    # Run the actual code
+    ###########################################
     delete_opt = [args.delete_h5]*len(file_list)
     #print(delete_opt)
     if args.single_coil:

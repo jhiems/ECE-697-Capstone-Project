@@ -1,4 +1,4 @@
 # ECE-697-Capstone-Project
 
 
-## A collection of code for my ECE 698
+## A collection of code for my ECE 697

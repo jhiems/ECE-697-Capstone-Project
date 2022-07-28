@@ -34,7 +34,7 @@ def single_coil_k2im(_file,_delete): #For conversion of single coil images
         _im = _im - np.amin(_im)
         _im = (_im/np.max(_im))*255
         _im = Image.fromarray(_im)
-        _im = _im.convert("RGB")
+        _im = _im.convert("L")
         _im.save(_file[0:-3]+"_"+str(i+1)+".png")
     if _delete:
         delete(_file)
@@ -54,7 +54,7 @@ def multi_coil_k2im(_file,_delete): #for conversion of multi coil images
         _im = _im - np.amin(_im)
         _im = (_im/np.max(_im))*255
         _im = Image.fromarray(_im)
-        _im = _im.convert("RGB")
+        _im = _im.convert("L")
         _im.save(_file[0:-3]+"_"+str(i+1)+".png")
     if _delete:
         delete(_file)

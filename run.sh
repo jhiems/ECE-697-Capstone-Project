@@ -69,7 +69,7 @@ python3 data_partition.py -s multicoil -t "data" -b
 # Training
 ########################################
 
-python3 pytorch-CycleGAN-and-pix2pix/train.py --dataroot "data" --name knees --model cycle_gan --batch_size 4 --n_epochs 100 --n_epochs_decay 100 --save_epoch_freq 10 --use_wandb --display_id -1 --no_html --gpu_ids 0 --input_nc 1 --output_nc 1
+python3 pytorch-CycleGAN-and-pix2pix/train.py --dataroot "data" --name knees --model cycle_gan --batch_size 4 --n_epochs 100 --n_epochs_decay 100 --save_epoch_freq 10 --use_wandb --display_id -1 --no_html --gpu_ids 0,1 --input_nc 1 --output_nc 1
 
 tar -czf model_out.tar.gz pytorch-CycleGAN-and-pix2pix
 

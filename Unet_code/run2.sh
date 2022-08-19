@@ -104,13 +104,13 @@ mv ece697-mri-denoising/* ./
 rm -rf ece697-mri-denoising
 
 
-python3 train_unet1.py --train_imgs 'data/trainA' --val_imgs 'data/valA' --test_imgs 'data/testA' --train_bias 'fields_5k_poly_train.pkl' --val_bias 'fields_5k_poly_val.pkl' --test_bias 'fields_5k_poly_test.pkl' --ckpt_save_path 'checkpoints' --proj_name 'UNet-L1+L2-cmd-line' --run_name '25 epochs --- wf=5, bicubic' --max_epochs 25 --batch_size 128 --wf 5
+python3 train_unet.py --train_imgs 'data/trainA' --val_imgs 'data/valA' --test_imgs 'data/testA' --train_bias 'fields_5k_poly_train.pkl' --val_bias 'fields_5k_poly_val.pkl' --test_bias 'fields_5k_poly_test.pkl' --ckpt_save_path 'checkpoints' --proj_name 'UNet-L1+L2-cmd-line' --run_name '25 epochs --- wf=5, bicubic' --max_epochs 25 --batch_size 128 --wf 5
 
 
-python3 train_unet1.py --train_imgs 'data/trainA' --val_imgs 'data/valA' --test_imgs 'data/testA' --train_bias 'fields_5k_poly_train.pkl' --val_bias 'fields_5k_poly_val.pkl' --test_bias 'fields_5k_poly_test.pkl' --ckpt_save_path 'checkpoints' --proj_name 'UNet-L1+L2-cmd-line' --run_name '35 epochs --- wf=6, bicubic' --max_epochs 35 --batch_size 128 --wf 6
+python3 train_unet.py --train_imgs 'data/trainA' --val_imgs 'data/valA' --test_imgs 'data/testA' --train_bias 'fields_5k_poly_train.pkl' --val_bias 'fields_5k_poly_val.pkl' --test_bias 'fields_5k_poly_test.pkl' --ckpt_save_path 'checkpoints' --proj_name 'UNet-L1+L2-cmd-line' --run_name '35 epochs --- wf=6, bicubic' --max_epochs 35 --batch_size 128 --wf 6
 
 
-python3 train_unet1.py --train_imgs 'data/trainA' --val_imgs 'data/valA' --test_imgs 'data/testA' --train_bias 'fields_5k_poly_train.pkl' --val_bias 'fields_5k_poly_val.pkl' --test_bias 'fields_5k_poly_test.pkl' --ckpt_save_path 'checkpoints' --proj_name 'UNet-L1+L2-cmd-line' --run_name '45 epochs --- wf=7, bicubic' --max_epochs 45 --batch_size 64 --wf 7
+python3 train_unet.py --train_imgs 'data/trainA' --val_imgs 'data/valA' --test_imgs 'data/testA' --train_bias 'fields_5k_poly_train.pkl' --val_bias 'fields_5k_poly_val.pkl' --test_bias 'fields_5k_poly_test.pkl' --ckpt_save_path 'checkpoints' --proj_name 'UNet-L1+L2-cmd-line' --run_name '45 epochs --- wf=7, bicubic' --max_epochs 45 --batch_size 64 --wf 7
 
 
 

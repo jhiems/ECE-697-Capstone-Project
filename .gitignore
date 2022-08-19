@@ -4,3 +4,5 @@ wandb_api_key.txt
 *.err
 gittoken.txt
 *.tar.gz
+checkpoint*
+field*

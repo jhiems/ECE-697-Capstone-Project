@@ -10,14 +10,14 @@ executable = run.sh
 #
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
-#transfer_input_files = /squid/gpu-examples/Miniconda3-latest-Linux-x86_64.sh, data_partition.py, kspace_to_im.py, /squid/jhiemstra/knee_multicoil_challenge.tar.gz, /squid/jhiemstra/knee_singlecoil_test_v2.tar.gz, run.sh, wandb_api_key.txt
-transfer_input_files = /squid/gpu-examples/Miniconda3-latest-Linux-x86_64.sh, data_partition.py, kspace_to_im.py, run.sh, wandb_api_key.txt
+
+transfer_input_files = /squid/gpu-examples/Miniconda3-latest-Linux-x86_64.sh, ../kspace_to_im.py, ../wandb_api_key.txt, environment.yml,  /squid/jhiemstra/fields1.pkl, Mainfile.py,  run.sh,  unet.py
 
 
 
 requirements = (CUDACapability == 8.0)&&(11.1 <= Target.CUDADriverVersion)&&(Target.HasCHTCStaging == true)&&(OpSysMajorVer == 7 || OpSysMajorVer == 8)
 request_cpus = 8
-request_gpus = 2
+request_gpus = 1
 request_memory = 64GB
 request_disk = 2100GB
 
